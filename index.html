@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your-Trip</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+</head>
+ 
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Your-Trip</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+                aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Book</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown">Packages</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">United States</a></li>
+                            <li><a class="dropdown-item" href="#">India</a></li>
+                            <li><a class="dropdown-item" href="#">France</a></li>
+                            <li><a class="dropdown-item" href="#">Germany</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                </ul>
+                <span class="navbar-text">
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
+                    <button class="btn btn-danger" data-bs-toggle="modal"
+                        data-bs-target="#registerModal">Register</button>
+                </span>
+            </div>
+        </div>
+    </nav>
+
+    <div id="hero">
+        <div>
+            <h1>Welcome to Your-Trip</h1>
+            <h2 id="changingText"><span>Visit </span> - <span id="animationText"></span> </h2>
+            <a href="#" class="btn btn-primary ">Book Now</a>
+        </div>
+    </div>
+
+
+    <section class="container-fluid  form-section  ">
+        <div class="container-xl py-5 ">
+            <h2 class="text-center mb-5">Book <span>Your Trip</span></h2>
+
+            <div class="row align-items-center">
+                <div class="col-md-6 mb-4 mb-md-0 position-relative">
+                    <div class="card border-0 shadow-lg">
+                        <img src="./images/form.webp" alt="Brand Image" class="img rounded" id="from-img">
+                        <div
+                            class="overlay-text position-absolute top-50 start-50 translate-middle text-white text-center p-3 bg-dark bg-opacity-75 rounded">
+                            <h3>Explore Your Next <span id="adventure">Adventure</span></h3>
+                            <p>Book your trip today and enjoy the journey of a lifetime!</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-6">
+                    <div class="card p-4 border-0 shadow-lg">
+                        <form id="bookingForm">
+                            <div class="mb-3">
+                                <label for="destination" class="form-label">Where to</label>
+                                <select class="form-select" id="destination" required>
+                                    <option value="USA">USA</option>
+                                    <option value="India">India</option>
+                                    <option value="Japan">Japan</option>
+                                    <option value="Iceland">Iceland</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="persons" class="form-label">How Many Persons</label>
+                                <input type="number" class="form-control" id="persons" min="1" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="startDate" class="form-label">Start Date</label>
+                                <input type="date" class="form-control" id="startDate" min="2024-10-09" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="endDate" class="form-label">End Date</label>
+                                <input type="date" class="form-control" id="endDate" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="description" class="form-label">Description</label>
+                                <textarea id="description" class="form-control" rows="5" minlength="50" maxlength="500"
+                                    required></textarea>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary w-100">Book Now</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="container-fluid gallery-section">
+        <div class="container-xl py-5">
+            <h2 class="mb-5">Our <span>Packages</span></h2>
+            <div class="row">
+                <div class=" col-sm-6 col-md-4 mb-4">
+                    <div class="card h-100">
+                        <img src="./images/santroni.webp" class="card-img-top" alt="Place Image">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Santorini, Greece</h5>
+                            <p class="card-text">Known for its white-washed buildings with blue domes, stunning sunsets,
+                                and
+                                Aegean Sea views.</p>
+                            <div class="">
+                                <p><strong>Price: $1200 USD</strong></p>
+                            </div>
+                            <div class="">
+                                <p class="rating">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                </p>
+                            </div>
+                            <div class="mt-auto">
+                                <a href="#" class="btn btn-primary w-100">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 mb-4">
+                    <div class="card h-100">
+                        <img src="./images/kyoto.jpg" class="card-img-top" alt="Place Image">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Kyoto, Japan</h5>
+                            <p class="card-text">A historic city filled with traditional temples, lush gardens, and
+                                stunning
+                                cherry blossom trees in spring.</p>
+                            <div class="">
+                                <p><strong>Price: $1190 USD</strong></p>
+                            </div>
+                            <div class="">
+                                <p class="rating">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-half"></i>
+                                </p>
+                            </div>
+                            <div class="mt-auto">
+                                <a href="#" class="btn btn-primary w-100">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 mb-4">
+                    <div class="card h-100">
+                        <img src="./images/Banff.jpg" class="card-img-top" alt="Place Image">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Banff National Park, Canada</h5>
+                            <p class="card-text">Known for its towering mountains, turquoise lakes, and vast forests,
+                                Banff
+                                offers outdoor adventure and incredible landscapes.</p>
+                            <div class="">
+                                <p><strong>Price: $1170 USD</strong></p>
+                            </div>
+                            <div class="">
+                                <p class="rating">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-half"></i>
+                                </p>
+                            </div>
+                            <div class="mt-auto">
+                                <a href="#" class="btn btn-primary w-100">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 mb-4">
+                    <div class="card h-100">
+                        <img src="./images/maui.jpg" class="card-img-top" alt="Place Image">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Maui, Hawaii, USA</h5>
+                            <p class="card-text">A tropical island with pristine beaches, lush jungles, and cascading
+                                waterfalls, offering a paradise for nature lovers.</p>
+                            <div class="">
+                                <p><strong>Price: $1150 USD</strong></p>
+                            </div>
+                            <div class="">
+                                <p class="rating">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-half"></i>
+                                </p>
+                            </div>
+                            <div class="mt-auto">
+                                <a href="#" class="btn btn-primary w-100">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class=" col-sm-6 col-md-4 mb-4">
+                    <div class="card h-100">
+                        <img src="./images/iceland.jpg" class="card-img-top" alt="Place Image">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Reykjavik, Iceland</h5>
+                            <p class="card-text"> Iceland's capital is known for its proximity to natural wonders like
+                                geysers, volcanoes, and the Northern Lights.</p>
+                            <div class="  ">
+                                <p><strong>Price: $1110 USD</strong></p>
+                            </div>
+                            <div class="mb">
+                                <p class="rating">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star"></i>
+                            </div>
+                            <div class="mt-auto">
+                                <a href="#" class="btn btn-primary w-100">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 mb-4">
+                    <div class="card h-100">
+                        <img src="./images/turkey.jpg" class="card-img-top" alt="Place Image">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Cappadocia, Turkey</h5>
+                            <p class="card-text">Famous for its unique rock formations, ancient cave dwellings, and hot
+                                air balloon rides.</p>
+                            <div class="  ">
+                                <p><strong>Price: $1060 USD</strong></p>
+                            </div>
+                            <div class="  ">
+                                <p class="rating">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-half"></i>
+                                    <i class="bi bi-star"></i>
+                                </p>
+                            </div>
+                            <div class="mt-auto">
+                                <a href="#" class="btn btn-primary w-100">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class=" col-sm-6 col-md-4 mb-4">
+                    <div class="card h-100">
+                        <img src="./images/morocco.jpg" class="card-img-top" alt="Place Image">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Marrakech, Morocco</h5>
+                            <p class="card-text">A vibrant city full of colorful markets, intricate palaces, and rich
+                                cultural history.</p>
+                            <div class="  ">
+                                <p><strong>Price: $1020 USD</strong></p>
+                            </div>
+                            <div class="  ">
+                                <p class="rating">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star"></i>
+                                    <i class="bi bi-star"></i>
+                                </p>
+                            </div>
+                            <div class="mt-auto">
+                                <a href="#" class="btn btn-primary w-100">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class=" col-sm-6 col-md-4 mb-4">
+                    <div class="card h-100">
+                        <img src="./images/Queenstown.jpg" class="card-img-top" alt="Place Image">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Queenstown, New Zealand</h5>
+                            <p class="card-text">A hub for adventure tourism, offering stunning views of lakes,
+                                mountains, and thrilling outdoor activities.</p>
+                            <div class="  ">
+                                <p><strong>Price: $900 USD</strong></p>
+                            </div>
+                            <div class="  ">
+                                <p class="rating">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-half"></i>
+                                    <i class="bi bi-star"></i>
+                                    <i class="bi bi-star"></i>
+                                </p>
+                            </div>
+                            <div class="mt-auto">
+                                <a href="#" class="btn btn-primary w-100">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class=" col-sm-6 col-md-4 mb-4">
+                    <div class="card h-100">
+                        <img src="./images/Jordan.jpg" class="card-img-top" alt="Place Image">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Petra, Jordan</h5>
+                            <p class="card-text"> An ancient archaeological city known for its rock-cut architecture,
+                                including the famous Treasury carved into pink sandstone cliffs.</p>
+                            <div class="  ">
+                                <p><strong>Price: $600 USD</strong></p>
+                            </div>
+                            <div class="  ">
+                                <p class="rating">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star"></i>
+                                    <i class="bi bi-star"></i>
+                                    <i class="bi bi-star"></i>
+                                </p>
+                            </div>
+                            <div class="mt-auto">
+                                <a href="#" class="btn btn-primary w-100">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+    <section class="container-fluid services-section ">
+        <div class="container-xl py-5">
+
+            <h2 class="text-center mb-5">Our <span>Services</span></h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <i class="bi bi-house-door-fill service-icon mb-3"></i>
+                            <h5 class="card-title">Affordable Hotel</h5>
+                            <p class="card-text">We offer affordable hotel stays with great comfort and service.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <i class="bi bi-cup-fill service-icon mb-3"></i>
+                            <h5 class="card-title">Food & Drinks</h5>
+                            <p class="card-text">Enjoy delicious meals and drinks during your journey with us.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <i class="bi bi-shield-fill-check service-icon mb-3"></i>
+                            <h5 class="card-title">Safety Guide</h5>
+                            <p class="card-text">Our safety guide ensures your trip is safe and secure at all times.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <i class="bi bi-bus-front service-icon mb-3"></i>
+
+                            <h5 class="card-title">Local Transportation</h5>
+                            <p class="card-text">Easily navigate the city with our guide to local transportation
+                                options.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <i class="bi bi-building service-icon mb-3"></i>
+
+                            <h5 class="card-title">Cultural Tours & Attractions</h5>
+                            <p class="card-text">Discover must-see attractions and enjoy curated cultural tours.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <i class="bi bi-shield-fill-check service-icon mb-3"></i>
+
+                            <h5 class="card-title">Emergency Contacts </h5>
+                            <p class="card-text">Quick access to important emergency numbers and services for your
+                                safety.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <section class="container-fluid gallery-section">
+        <div class="container-xl py-5">
+            <h2 class="text-center mb-5">Company <span>Gallery</span></h2>
+            <div class="row ">
+                <div class="col-sm-6 col-md-4 mb-4">
+                    <div class="gallery-card">
+                        <img src="./images/Queenstown.jpg" alt="Gallery Image 1" class="img-fluid gallery-img">
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 mb-4">
+                    <div class="gallery-card">
+                        <img src="./images/iceland.jpg" alt="Gallery Image 2" class="img-fluid gallery-img">
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 mb-4">
+                    <div class="gallery-card">
+                        <img src="./images/Banff.jpg" alt="Gallery Image 3" class="img-fluid gallery-img">
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 mb-4">
+                    <div class="gallery-card">
+                        <img src="./images/turkey.jpg" alt="Gallery Image 1" class="img-fluid gallery-img">
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 mb-4">
+                    <div class="gallery-card">
+                        <img src="./images/maui.jpg" alt="Gallery Image 2" class="img-fluid gallery-img">
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 mb-4">
+                    <div class="gallery-card">
+                        <img src="./images/kyoto.jpg" alt="Gallery Image 3" class="img-fluid gallery-img">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section class="container-fluid about-us-section py-5">
+        <div class="container-xl ">
+            <h2 class="text-center mb-5">About <span>Us</span></h2>
+
+            <div class="row ">
+                <!-- Left Column - Image -->
+                <div class="col-md-6 mb-4">
+                    <img src="./images/about.jpg" alt="About Us Image" class="img-fluid w-100 rounded">
+                </div>
+                <!-- Right Column - Company Information -->
+                <div class="col-md-6">
+                    <p>Founded in 2001, Your-Trip has been a leader in the travel industry, offering tailored travel
+                        experiences across the globe. Our mission is to provide unforgettable journeys that enrich and
+                        inspire.</p>
+                    <p>Our team of experts has organized trips for over 10,000 satisfied clients, creating cherished
+                        memories in exotic locations worldwide.</p>
+                    <p>Our motto: "Every journey tells a story." Join us to create yours.</p>
+                    <p>At Your-Trip, we believe that every traveler deserves a unique and memorable experience, and we
+                        go above and beyond to customize trips that match your individual preferences. From luxury
+                        vacations to adventurous expeditions, we handle every detail with precision and care.</p>
+                    <p>With a dedicated support team available around the clock, we are committed to ensuring that your
+                        travel experience is seamless and enjoyable. Trust Your-Trip to bring your dream destinations to
+                        life, one journey at a time.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer bg-dark text-white text-center py-4">
+        <div class="container">
+            <p class="mb-0">Your-Trip</p>
+            <div class="social-icons my-2">
+                <a href="#" class="text-white me-3"><i class="bi bi-facebook"></i></a>
+                <a href="#" class="text-white me-3"><i class="bi bi-instagram"></i></a>
+                <a href="#" class="text-white"><i class="bi bi-twitter"></i></a>
+            </div>
+            <p class="small mb-0">© 2024 Your-Trip. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Register Modal -->
+    <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="registerModalLabel">Register</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="registerForm">
+                        <div class="mb-3">
+                            <label for="fullName" class="form-label">Full Name</label>
+                            <input type="text" class="form-control" id="fullName">
+                            <div id="fullNameError" class="form-text"></div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="contact" class="form-label">Contact Number</label>
+                            <input type="tel" class="form-control" id="contact" pattern="[0-9]{10}">
+                            <div id="contactError" class="form-text"></div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="dob" class="form-label">Date of Birth</label>
+                            <input type="date" class="form-control" id="dob">
+                            <div id="dobError" class="form-text"></div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email">
+                            <div id="emailError" class="form-text"></div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="password" minlength="8">
+                            <div id="passwordError" class="form-text text-danger"></div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="gender" class="form-label">Gender</label>
+                            <select id="gender" class="form-select">
+                                <option value="">Select Gender</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                <option value="Other">Other</option>
+                            </select>
+                            <div id="genderError" class="form-text"></div>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Register</button>
+                    </form>
+                    <p class="text-center mt-3">
+                        Already have an account? <a href="#" data-bs-toggle="modal"
+                            data-bs-target="#loginModal">Login</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Login Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">Login</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="loginForm">
+                        <div class="mb-3">
+                            <label for="loginEmail" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="loginEmail" required>
+                            <div id="loginEmailError" class="form-text"></div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="loginPassword" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="loginPassword">
+                            <div id="loginPasswordError" class="form-text"></div>
+                        </div>
+                        
+
+                        <button type="submit" class="btn btn-primary w-100">Login</button>
+                    </form>
+                    <p class="text-center mt-3">
+                        Don't have an account? <a href="#" data-bs-toggle="modal"
+                            data-bs-target="#registerModal">Register</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="./js/formValidation.js"></script>
+
+
+</body>
+
+</html>

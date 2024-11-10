@@ -1,0 +1,316 @@
+/* CSS Variables */
+:root {
+  --primary-color: #00796b;
+  --secondary-color: yellowgreen;
+  --bg-dark: #222;
+  --text-light: #bbb;
+  --white-overlay: rgba(255, 255, 255, 0.7);
+}
+
+/* Navigation Styling */
+.bg-nav {
+  background-color: #969696;
+  color: aliceblue;
+}
+
+/* Hero Section */
+#hero {
+  position: relative;
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  /* background-image: url("../images/bg-hero.jpg"); */
+  background: linear-gradient(#00000059, rgba(0, 0, 0, 0.4)),
+    url("../images/bg-hero.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#hero h1 {
+  font-size: clamp(2rem, 2vw + 1rem, 3rem);
+}
+
+#hero h2 {
+  font-size: clamp(2.5rem, 2vw + 1rem, 4rem);
+  margin-top: 20px;
+}
+
+#hero .btn {
+  margin-top: 20px;
+  font-size: 1.5rem;
+  padding: 10px 20px;
+  transition: transform 0.2s ease;
+}
+
+#hero .btn:hover {
+  transform: scale(1.05);
+}
+
+#changingText {
+  font-size: 40px;
+}
+
+#animationText {
+  color: var(--secondary-color);
+}
+
+#animationText:after {
+  content: "India";
+  animation: changeText 10s infinite ease-in-out;
+}
+
+@keyframes changeText {
+  25% {
+    content: "Greenland";
+  }
+  50% {
+    content: "USA";
+  }
+  75% {
+    content: "Japan";
+  }
+  100% {
+    content: "Iceland";
+  }
+}
+
+/* Container */
+.container,
+.c-container {
+  background-color: transparent;
+  max-width: 1400px;
+  margin: auto;
+}
+
+/* Form Section */
+.form-section {
+  background: linear-gradient(#00000059, rgba(0, 0, 0, 0.4)),
+    url("../images/form.jpg") center / cover no-repeat;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+}
+
+.form-section h2 {
+  margin-bottom: 20px;
+}
+
+.form-section .card {
+  margin-bottom: 20px;
+  background-color: transparent;
+  backdrop-filter: blur(30px);
+}
+
+.form-section input,
+.form-section select,
+.form-section textarea {
+  border-radius: 5px;
+  color: white;
+  background-color: var(--white-overlay);
+  border: 1px solid #b2dfdb;
+}
+
+.form-section label {
+  color: white;
+}
+
+/* Gallery Section */
+.gallery-section {
+  /* background: linear-gradient(#00000059, rgba(0, 0, 0, 0.4)), url("../images/gallery-bg.jpg") center / cover no-repeat; */
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7)),
+    url("../images/form1.jpg") center / cover no-repeat;
+}
+
+.gallery-section h2,
+.form-section h2,
+.services-section h2,
+.about-us-section h2 {
+  text-align: center;
+  color: white;
+  font-weight: 900;
+  font-size: 48px;
+  text-decoration: underline;
+  text-decoration-color: var(--secondary-color);
+}
+
+.gallery-section h2 span,
+.form-section h2 span,
+.services-section h2 span,
+.about-us-section h2 span {
+  color: var(--secondary-color);
+}
+
+#adventure {
+  text-decoration: underline;
+  text-decoration-color: var(--secondary-color);
+  color: var(--secondary-color);
+}
+
+/* Card and Hover Effects */
+.card {
+  background-color: #ffffff;
+  border: 1px solid #b2dfdb;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 4px;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.15);
+}
+
+.gallery-section .card h5 {
+  color: var(--primary-color);
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+.gallery-section .card-body {
+  padding: 5px;
+  color: #555;
+  font-size: 1rem;
+}
+
+.gallery-section .card img {
+  border-radius: 10px 10px 0 0;
+  height: 15vh;
+  object-fit: cover;
+}
+
+/* Button Styling */
+.gallery-section .card .btn-primary,
+.services-section .card .btn-primary {
+  background-color: var(--primary-color);
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.gallery-section .card .btn-primary:hover,
+.services-section .card .btn-primary:hover {
+  background-color: #004d40;
+}
+
+/* Rating Style */
+.rating i {
+  color: #ffd700;
+  font-size: 1.25rem;
+}
+
+/* Services Section */
+.services-section {
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7)),
+    url("../images/services.jpg") center / cover no-repeat;
+  padding: 60px 15px;
+}
+
+.services-section .card {
+  background-color: #ffffff;
+  border: 1px solid #b2dfdb;
+  border-radius: 10px;
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.services-section .service-icon {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+}
+
+.services-section .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.15);
+}
+
+.services-section .card-title {
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+.services-section .card-text {
+  color: #555;
+}
+
+/* Gallery Card Hover Effect */
+.gallery-section .gallery-card {
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.gallery-section .gallery-img {
+  transition: transform 0.3s ease;
+  width: 100%;
+}
+
+.gallery-section .gallery-card:hover .gallery-img {
+  transform: scale(1.1);
+}
+
+/* About Us Section */
+.about-us-section {
+  background: #5f6163;
+  padding: 60px 15px;
+}
+
+.about-us-section p {
+  color: #fff;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* Footer Section */
+.footer {
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  font-size: 0.9rem;
+}
+
+.footer .social-icons a {
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.footer .social-icons a:hover {
+  color: var(--secondary-color);
+}
+
+/* Modals */
+/* Styling for Register and Login Modals */
+.modal-content {
+  border-radius: 10px;
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.modal-header {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.modal-body .form-label {
+  font-weight: bold;
+  color: #333;
+}
+
+.modal-body input,
+.modal-body select {
+  border: 1px solid #b2dfdb;
+  border-radius: 5px;
+}
+
+.modal-body a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.modal-body a:hover {
+  text-decoration: underline;
+}
